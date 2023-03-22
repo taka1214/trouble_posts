@@ -20,6 +20,9 @@ Route::resource('posts', TroublePostController::class);
 Route::get('/replies', [ReplyController::class, 'index'])->name('replies.index');
 Route::get('/replies/create/{troublePost}', [ReplyController::class, 'create'])->name('replies.create');
 Route::post('/replies', [ReplyController::class, 'store'])->name('replies.store');
+Route::get('/replies/{reply}/edit', [ReplyController::class, 'edit'])->name('replies.edit');
+Route::put('/replies/{reply}', [ReplyController::class, 'update'])->name('replies.update');
+Route::delete('/replies/{reply}', [ReplyController::class, 'destroy'])->name('replies.destroy');;
 
 // Route::resource('replies', ReplyController::class);
 

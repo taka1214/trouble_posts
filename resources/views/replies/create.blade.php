@@ -1,5 +1,10 @@
-<form method="POST" action="{{ route('replies.store', ['id' => $troublePost->id]) }}">
+<form method="POST" action="{{ route('replies.store') }}">
   @csrf
+  <input
+      name="troublePost_id"
+      type="hidden"
+      value="{{ $troublePost->id }}"
+  >
   <div>
     <label for="message">返信</label>
     <textarea name="message" required>{{ old('message') }}</textarea>

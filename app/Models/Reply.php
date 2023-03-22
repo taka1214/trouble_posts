@@ -10,6 +10,7 @@ class Reply extends Model
     use HasFactory;
 
     protected $fillable = [
+        'trouble_post_id',
         'message',
     ];
 
