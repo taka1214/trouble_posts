@@ -154,9 +154,9 @@ return [
     */
 
     'attributes' => [
-        'title' => 'タイトル',
-        'body' => '本文',
-        'message' => '返信',
+        'name' => '名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード' 
     ],
 
 ];
