@@ -1,7 +1,8 @@
-{{ $troublePost->id }}
-{{ $troublePost->title }}
-{{ $troublePost->body }}
-{{ $troublePost->image_file }}
+{{ $troublePost->title }}<br>
+{{ $troublePost->body }}<br>
+@if ($troublePost['image_file'])
+<img src="{{ Storage::url($troublePost['image_file']) }}"><br>
+@endif
 {{ $troublePost->created_at }}
 <form method="get" action="{{ route('posts.edit', ['post' => $troublePost->id ]) }}">
   <button>編集</button>
@@ -31,13 +32,13 @@
 </ul>
 
 <div>
-    <a href="{{ route('replies.create', ['troublePost' => $troublePost]) }}" class="btn btn-primary">New Reply</a>
+  <a href="{{ route('replies.create', ['troublePost' => $troublePost]) }}" class="btn btn-primary">New Reply</a>
 </div>
 
 @if (session('success'))
-    <div>
-     {{ session('success') }}
-    </div>
+<div>
+  {{ session('success') }}
+</div>
 @endif
 
 
@@ -50,6 +51,7 @@
       document.getElementById('delete_' + e.dataset.id).submit()
     }
   }
+
   function deleteReply(e) {
     'use strict'
     if (confirm('Are you sure?')) {

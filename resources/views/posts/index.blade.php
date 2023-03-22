@@ -7,6 +7,5 @@
   {{ $troublePost->id }}
   {{ $troublePost->title }}
   {{ $troublePost->body }}
-  {{ $troublePost->image_file }}
   <a href="{{ route('posts.show', ['post' => $troublePost->id ]) }}">show</a><br>
 @endforeach

@@ -26,7 +26,7 @@ class StoreTroublePostRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:100'],
             'body' => ['required', 'string', 'max:1000'],
-            'image_file' => ['string', 'max:500', 'nullable'],
+            'image_file' => ['image', 'nullable', 'max:10240'],
         ];
     }
 }

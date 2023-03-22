@@ -18,7 +18,7 @@ class TroublePostController extends Controller
         $search = $request->search;
         $query = troublePost::search($search);
         $troublePosts = $query->select('id', 'title', 'body', 'image_file')
-        ->get();
+            ->get();
 
         return view('posts.index', compact('troublePosts'));
     }
@@ -44,7 +44,7 @@ class TroublePostController extends Controller
         troublePost::create([
             'title' => $request->title,
             'body' => $request->body,
-            'image_file' => $request->image_file,
+            'image_file' => $request->file('image_file')->store('public/images'),
         ]);
 
         return to_route('posts.index');
