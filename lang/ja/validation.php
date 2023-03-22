@@ -157,6 +157,9 @@ return [
         'title' => 'タイトル',
         'body' => '本文',
         'message' => '返信',
+        'password' => 'パスワード',
+        'name' => '名前',
+        'email' => 'メールアドレス',
     ],
 
 ];
